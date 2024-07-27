@@ -59,18 +59,18 @@
 
 <div class="container">
     <h1> Notes App</h1>
-    <form action = "/"  method ="post">
+    <form action="/" method="post">
         <div class="mb-3">
             <label for="title" class="form-label">Note Title</label>
-            <input type="text" class="form-control" name="title" aria-describedby="emailHelp">
+            <input type="text" class="form-control" name="title" aria-describedby="emailHelp" id ="title">
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label">Note Description</label>
-            <input type="text" class="form-control" name="desc">
+            <input type="text" class="form-control" name="desc" id ="desc">
         </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <div class="mb-3">
+            <label for="priority" class="form-label">Priority</label>
+            <input type="number" class="form-control" name="priority" id ="priority">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -80,14 +80,31 @@
 
 <div class="container">
     <h2>Your notes</h2>
-    {% for item in newDocs %}
-    <div>
-        <li>{{ item.title }}</li>
-        <li>{{ item.desc }}</li>
-        <li>{{ item.priority }}</li>
-    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Serial Number</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Priority</th>
+        </tr>
+        </thead>
+        {% for item in newDocs %}
+        <div>
 
-    {% endfor %}
+            <tbody>
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{item.title}}</td>
+                <td>{{item.desc}}</td>
+                <td>{{item.priority}}</td>
+            </tr>
+            </tbody>
+
+        </div>
+
+        {% endfor %}
+    </table>
 </div>
 <!-- End Example Code -->
 </body>
