@@ -1,9 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from typing import Optional
 
 
 class Note(BaseModel):
-    title: str
-    desc: str
-    priority: int
+    title: Optional[str] = Field(default="")
+    priority: int = Field(default=0)
+    desc: Optional[str] = Field(default="")
 
     

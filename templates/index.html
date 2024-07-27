@@ -82,7 +82,9 @@
     <h2>Your notes</h2>
     {% for item in newDocs %}
     <div>
+        <li>{{ item.title }}</li>
         <li>{{ item.desc }}</li>
+        <li>{{ item.priority }}</li>
     </div>
 
     {% endfor %}
