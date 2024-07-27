@@ -1,4 +1,4 @@
-def noteEntity(item)  ->dict:
+def noteEntity(item) -> dict:
     return {
         "id": str(item["_id"]),
         "title": item["title"],
@@ -7,5 +7,5 @@ def noteEntity(item)  ->dict:
     }
 
 
-def notesEntity(items) -> list:
-    return [noteEntity(item) for item in items]
+def notesEntity(entity) -> list:
+    return [noteEntity(item) for item in entity]
